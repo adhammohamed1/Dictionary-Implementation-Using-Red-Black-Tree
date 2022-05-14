@@ -7,7 +7,8 @@ DICTIONARY_NAME = "EN-US-Dictionary"
 def readFile(fileName):
     file = open(fileName, "r")
     for i in file:
-        tree.insert(i.rstrip('\n'))
+        if not tree.search(i.rstrip('\n')):
+            tree.insert(i.rstrip('\n'))
     file.close()
 
 
@@ -27,18 +28,18 @@ while True:
         print(DICTIONARY_NAME + ' currently has ' + str(tree.number_of_nodes) + ' words!')
 
     elif option == '3':
-        s = str(input("Enter the word you want to insert: "))
-        if tree.search(s.strip().lower()):
-            print("Word is already in the dictionary!")
+        s = str(input("Enter the word you want to insert: ")).strip()
+        if tree.search(s.lower()):
+            print("\"" + s + "\" is already in the dictionary!")
         elif len(s) > 0 and not s.isspace():
-            tree.insert(s.strip().lower())
+            tree.insert(s.lower())
             print('\"' + s + '\" inserted Successfully')
         else:
             print('Invalid entry')
 
     elif option == '4':
-        s = str(input("Enter the word you want to look-up: "))
-        if tree.search(s.strip().lower()):
+        s = str(input("Enter the word you want to look-up: ")).strip()
+        if tree.search(s.lower()):
             print("FOUND \"" + s + '\"!')
         else:
             print("\"" + s + '\" DOES NOT EXIST IN THE DICTIONARY')

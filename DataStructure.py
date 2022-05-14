@@ -60,6 +60,7 @@ class RedBlackTree:
         self.insertFix(newNode)  # Handle cases
         self.number_of_nodes += 1
 
+    # This method handles cases of RB-tree insertions
     def insertFix(self, newNode):
         while newNode != self.root and newNode.parent.color == 0:  # Loop until we reach the root or parent is black
 
@@ -151,10 +152,21 @@ class RedBlackTree:
         y.right = node  # connect y to node
         node.parent = y  # connect node to y
 
+    # This method returns the height of the tree
     def heightOfTree(self, node, sumval):
         if node is self.nil:
             return sumval
         return max(self.heightOfTree(node.left, sumval + 1), self.heightOfTree(node.right, sumval + 1))
+
+    # This method returns the black-height of the tree
+    def getBlackHeight(self):
+        node = self.root
+        bh = 0
+        while node is not self.nil:
+            node = node.left
+            if node.color == 1:
+                bh += 1
+        return bh
 
     # Function to print used in debugging
     def __printCall(self, node, indent, last):
@@ -176,22 +188,21 @@ class RedBlackTree:
     def print_tree(self):
         self.__printCall(self.root, "", True)
 
-
 """
-tree= RedBlackTree()
-tree.insert(10)
-tree.insert(20)
-tree.insert(50)
-tree.insert(40)
-tree.insert(30)
-tree.insert(60)
-tree.insert(70)
-tree.insert(80)
-tree.insert(90)
-tree.insert(100)
-print(tree.root)
+tree = RedBlackTree()
+tree.insert('a')
+tree.insert('b')
+tree.insert('e')
+tree.insert('d')
+tree.insert('c')
+tree.insert('f')
+tree.insert('g')
+tree.insert('h')
+tree.insert('i')
+tree.insert('j')
 tree.print_tree()
-print(tree.heightOfTree(tree.root,0))
+print(tree.heightOfTree(tree.root, 0))
 print(tree.number_of_nodes)
-print(tree.search(91))
+print(tree.search('q'))
+print(tree.getBlackHeight())
 """
