@@ -17,7 +17,8 @@ while True:
     option = input(
         "1- Load \"" + DICTIONARY_NAME + "\"\t2- Print size of the Dictionary\n"
         "3- Insert Word             \t4- Look-up a Word\n"
-        "5- Print Tree Height       \t6- Exit\n"
+        "5- Print Tree Height       \t6- Print Black Height of the Tree\n"
+        "7- Exit\n"
         "> ")
 
     if option == '1':
@@ -48,6 +49,9 @@ while True:
         print(tree.heightOfTree(tree.root, 0))
 
     elif option == '6':
+        print(tree.getBlackHeight())
+
+    elif option == '7':
         print("Thank you for using our application! :)")
         break
 

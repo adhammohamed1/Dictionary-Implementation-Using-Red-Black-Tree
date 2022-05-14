@@ -188,6 +188,7 @@ class RedBlackTree:
     def print_tree(self):
         self.__printCall(self.root, "", True)
 
+
 """
 tree = RedBlackTree()
 tree.insert('a')

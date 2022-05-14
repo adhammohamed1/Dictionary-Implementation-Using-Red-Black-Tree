@@ -2,7 +2,7 @@
  
 A red-black tree is a self-balancing BST. It has the advantage of ensuring a worst case of O(log n) time complexity at all times whereas a BST may become degenerate (skewed) and require O(n).
 
-This implementation contains all of the basic BST operations except remove.
+This implementation contains all the basic BST operations except remove.
  
 This program lets you: 
 1. Load dictionary from text file into a red-black tree
@@ -10,3 +10,4 @@ This program lets you:
 3. Insert a word
 4. Check if a word exists in the dictionary or not
 5. Print the height of the tree 
+6. Print the black height of the tree
