@@ -20,7 +20,8 @@ This implementation contains all the red-black tree operations except remove.
 3. Insert a word
 4. Check if a word exists in the dictionary or not
 5. Print the height of the tree 
-6. Print the black height of the tree 
+6. Print the black height of the tree
+7. Includes a method to print the whole tree in datastructure.py (wasn't added to main menu as the tree will be too big since the dictionary contains over 90k words) 
 ## Tools
 1. IntelliJ PyCharm (IDE)
 2. Python 3
